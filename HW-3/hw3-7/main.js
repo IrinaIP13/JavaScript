@@ -15,21 +15,22 @@ let users = [
 ];
 //
 // за допомогою циклу вивести
+
 // – користувачів зі статусом true
-// – користувачів зі статусом false
-// – користувачів, які старші за 30 років
-
-
 console.log('Користувачі зі статусом true:')
 for (const usersKey in users) {
     let user = users[usersKey];
     if (user.status) console.log(user.name)
 }
+
+// – користувачів зі статусом false
 console.log('Користувачі зі статусом false:')
 for (const usersKey in users) {
     let user = users[usersKey];
     if (!user.status) console.log(user.name)
 }
+
+// – користувачів, які старші за 30 років
 console.log('Користувачі, які старші за 30 років:')
 for (const usersKey in users) {
     let user = users[usersKey];

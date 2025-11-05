@@ -277,12 +277,3 @@ for (const usersListKey in usersList) {
 }
 
 document.write(`</div>`);
-
-
-
-// <style>
-//     .user-block {
-//     color: red;
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;}
-// </style>
