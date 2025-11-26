@@ -2,7 +2,7 @@
 //
 // – створити функцію яка повертає найменьше число з масиву
 
-let minNumber = (array) => {
+let minNumber = array => {
     let min = array[0];
     for (let i = 1; i < array.length; i++) {
         if (array[i] < min) min = array[i];

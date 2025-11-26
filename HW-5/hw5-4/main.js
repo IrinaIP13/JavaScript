@@ -2,7 +2,7 @@
 //
 // – створити функцію, яка приймає масив та виводить кожен його елемент
 
-let printArray = (array) => {
+let printArray = array => {
     for (const arrayElement of array)
     {console.log(arrayElement);}
 }
