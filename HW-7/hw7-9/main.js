@@ -1,23 +1,22 @@
 // #gsKLAsNWM
 //
 // *Через Array.prototype. створити власний foreach, filter
+let array = [4,6,2,8,5,9,11];
 
-Array.prototype.myForeach = function (collback) {
-    let arguments = this;
-    for (const argument of arguments) {
-        collback(argument);
+Array.prototype.myForeach = function (callback) {
+    let array = this;
+    for (let i = 0; i < array.length; i++) {
+        callback(array[i], i, array);
     }
 }
+array.myForeach(item => console.log(item));
 
-let array = [4,6,2,8,5,9,11];
-array.myForeach(argument => console.log(argument));
-
-Array.prototype.myFilter = function (collback) {
-    let arguments = this;
+Array.prototype.myFilter = function (predicate) {
+    let array = this;
     let newArray = [];
-    for (const argument of arguments) {
-        if (collback(argument)) {
-            newArray.push(argument);
+    for (let i = 0; i < array.length; i++) {
+        if (predicate(array[i], i, array)) {
+            newArray.push(array[i]);
         }
     }
     return newArray;
