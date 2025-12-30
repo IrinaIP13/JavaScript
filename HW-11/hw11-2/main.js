@@ -10,36 +10,38 @@ fetch('https://dummyjson.com/recipes')
 
         for (const recElement of recipes) {
             const div = document.createElement('div')
+            div.style.marginLeft = '50px';
 
-            div.innerText = `
-            id: ${recElement.id},
-            name: ${recElement.name},
-            ingredients: ${arrFunc(recElement.ingredients)}
-            instructions: ${arrFunc(recElement.instructions)}
-            prepTimeMinutes: ${recElement.prepTimeMinutes},
-            cookTimeMinutes: ${recElement.cookTimeMinutes},
-            servings: ${recElement.servings},
-            difficulty: ${recElement.difficulty},
-            cuisine: ${recElement.cuisine},
-            caloriesPerServing: ${recElement.caloriesPerServing},
-            tags: ${arrFunc(recElement.tags)}
-            userId: ${recElement.userId},
-            rating: ${recElement.rating},
-            reviewCount: ${recElement.reviewCount},
-            mealType: ${arrFunc(recElement.mealType)}
-            image: `;
+            div.innerHTML = `
+            <b>id</b>: ${recElement.id},<br>
+            <b>name</b>: ${recElement.name},<br>
+            <b>ingredients</b>: ${arrFunc(recElement.ingredients)}
+            <b>instructions</b>: ${arrFunc(recElement.instructions)}
+            <b>prepTimeMinutes</b>: ${recElement.prepTimeMinutes},<br>
+            <b>cookTimeMinutes</b>: ${recElement.cookTimeMinutes},<br>
+            <b>servings</b>: ${recElement.servings},<br>
+            <b>difficulty</b>: ${recElement.difficulty},<br>
+            <b>cuisine</b>: ${recElement.cuisine},<br>
+            <b>caloriesPerServing</b>: ${recElement.caloriesPerServing},<br>
+            <b>tags</b>: ${arrFunc(recElement.tags)}
+            <b>userId</b>: ${recElement.userId},<br>
+            <b>rating</b>: ${recElement.rating},<br>
+            <b>reviewCount</b>: ${recElement.reviewCount},<br>
+            <b>mealType</b>: ${arrFunc(recElement.mealType)}`;
 
             let img = document.createElement('img');
             img.style.width = '300px';
+            img.style.marginTop = '20px';
+            img.style.marginLeft = '50px';
             img.src = recElement.image;
 
-            document.body.append(div, img);
+            document.body.append(img, div);
         }
     });
 
 function arrFunc(arr) {
-    let res = [];
+    let res = `<ul>`;
     for (const arrElement of arr) {
-        res += ' \n "' + arrElement + '",';
-    } return res;
+        res += `<li>${arrElement}</li>`;
+    }return res + `</ul>`;
 }
