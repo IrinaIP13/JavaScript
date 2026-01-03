@@ -1,11 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Exam Task 1</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="containerTest">
+    <h1>Test</h1>
+    <form id="testForm">
+        <label for="pairNameValue">Name/Value Pair</label><br>
+        <input type="text" name="pairNameValue" id="pairNameValue" placeholder="Name=Value">
+        <button type="submit" id="buttonAdd">Add</button>
+        <p id="errorMessage">Incorrect value</p>
+    </form>
+    <p>Name/Value Pair List</p>
+    <section id="sortNameValue">
+        <ul id="pairList"></ul>
+        <div id="buttonsSortDelete">
+            <button id="sortByName">Sort by Name</button>
+            <button id="sortByValue">Sort by Value</button>
+            <button id="buttonDelete">Delete</button>
+        </div>
+    </section>
+</div>
 <script src="main.js"></script>
 </body>
 </html>
