@@ -30,6 +30,7 @@ function create(suit, color) {
 
 
 let objRes = cards.reduce((acc, cur) => {
+    console.log(cur)
     switch (cur.cardSuit){
         case 'spade':
             acc.spades.push(cur);
